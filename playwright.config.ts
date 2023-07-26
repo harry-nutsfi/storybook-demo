@@ -1,5 +1,7 @@
 import { defineConfig, devices } from "@playwright/test";
-const BASE_URL = process.env.BASE_URL || `http://localhost:3000`;
+
+const PORT = process.env.PORT || 3000;
+const BASE_URL = process.env.BASE_URL || `http://localhost:${PORT}`;
 
 /**
  * Read environment variables from file.
@@ -31,14 +33,12 @@ export default defineConfig({
     trace: "on-first-retry",
   },
 
-  webServer: process.env.CI
-    ? undefined
-    : {
-        command: `yarn dev`,
-        url: BASE_URL,
-        timeout: 120 * 1000,
-        reuseExistingServer: true,
-      },
+  webServer: {
+    command: `yarn dev`,
+    url: BASE_URL,
+    timeout: 120 * 1000,
+    reuseExistingServer: true,
+  },
 
   /* Configure projects for major browsers */
   projects: [
