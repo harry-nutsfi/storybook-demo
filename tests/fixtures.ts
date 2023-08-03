@@ -35,14 +35,15 @@ export const test = base.extend<{
     await initialSetup(chromium, {
       secretWordsOrPrivateKey:
         "test test test test test test test test test test test junk",
-      network: "sepolia",
-      password: "Tester@1234",
+      network: "goerli",
+      password: "e2eTesting",
       enableAdvancedSettings: true,
     });
     await use(context);
-    if (!process.env.SERIAL_MODE) {
-      await context.close();
-    }
+    await context.pages()[0]?.close();
+    // if (!process.env.SERIAL_MODE) {
+    // await context.close();
+    // }
   },
 });
 export const expect = test.expect;
