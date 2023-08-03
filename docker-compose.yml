@@ -15,7 +15,8 @@ services:
     working_dir: /app
     # Replace "yarn test:e2e" with your test run script 
     command: > 
-      yarn test:e2e
+      bash -c "yarn playwright install --with-deps
+      && yarn test:e2e"
     depends_on:
       - display
     networks:
