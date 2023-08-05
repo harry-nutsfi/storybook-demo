@@ -40,7 +40,7 @@ export const test = base.extend<{
       enableAdvancedSettings: true,
     });
     await use(context);
-    await context.pages()[0]?.close();
+    // await context.pages()[0]?.close();
     // if (!process.env.SERIAL_MODE) {
     // await context.close();
     // }
