@@ -33,8 +33,6 @@ export default defineConfig({
     trace: "on-first-retry",
   },
 
-  timeout: 60 * 1000,
-
   webServer: {
     command: `yarn dev`,
     url: BASE_URL,
