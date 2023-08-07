@@ -17,9 +17,12 @@ jobs:
       run: yarn
     - name: Install Playwright Browsers
       run: yarn playwright install --with-deps
+    - name: Install Fluxbox
+      run: sudo apt-get install --no-install-recommends -y fluxbox
     - name: Run Playwright tests
       run: |
         Xvfb :0 -screen 0 1024x768x24 -listen tcp -ac &
+        fluxbox &
         yarn playwright test
     - uses: actions/upload-artifact@v3
       if: always()
