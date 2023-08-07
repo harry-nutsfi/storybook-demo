@@ -20,3 +20,20 @@ test("connect wallet using default metamask account", async () => {
   await metamask.acceptAccess();
   await expect(await sharedPage.locator("h5")).toContainText("Connected");
 });
+
+test("disconnect wallet ", async () => {
+  await sharedPage.getByRole("button", { name: "Disconnect" }).click();
+  await expect(
+    await sharedPage.getByRole("button", { name: "Connect wallet" })
+  ).toBeVisible();
+});
+
+test("disconnect wallet and import new one", async () => {
+  await metamask.disconnectWalletFromAllDapps();
+  await metamask.importAccount(
+    "0xdbda1821b80551c9d65939329250298aa3472ba22feea921c0cf5d620ea67b97"
+  );
+  await sharedPage.getByRole("button", { name: "Connect wallet" }).click();
+  await metamask.acceptAccess();
+  await expect(await sharedPage.locator("h5")).toContainText("Connected");
+});
