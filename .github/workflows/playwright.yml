@@ -18,7 +18,9 @@ jobs:
     - name: Install Playwright Browsers
       run: yarn playwright install --with-deps
     - name: Run Playwright tests
-      run: xvfb-run yarn playwright test
+      run: xvfb-run yarn test:e2e
+    - name: Run Playwright test components
+      run: xvfb-run yarn test:ct
     - uses: actions/upload-artifact@v3
       if: always()
       with:
