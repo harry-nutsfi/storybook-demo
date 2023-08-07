@@ -9,4 +9,6 @@ COPY yarn.lock ./
 
 FROM base as test
 RUN yarn --frozen-lockfile --prefer-offline --no-audit
+RUN npx playwright install
+COPY .env ./
 COPY . .
