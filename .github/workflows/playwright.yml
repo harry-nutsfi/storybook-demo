@@ -20,7 +20,6 @@ jobs:
     - name: Run Playwright tests
       run: |
         Xvfb :0 -screen 0 1024x768x24 -listen tcp -ac &
-        fluxbox &
         yarn playwright test
     - uses: actions/upload-artifact@v3
       if: always()
