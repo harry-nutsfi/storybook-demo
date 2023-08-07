@@ -15,7 +15,7 @@ services:
     working_dir: /app
     # Replace "yarn test:e2e" with your test run script 
     command: > 
-      yarn test:e2e"
+      yarn test:e2e
     depends_on:
       - display
     networks:
