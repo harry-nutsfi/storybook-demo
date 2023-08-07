@@ -10,8 +10,7 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "chromatic": "npx chromatic",
-    "test:e2e": "playwright test",
-    "test:e2e:sv": "start-server-and-test 'yarn dev' http://localhost:3000 'yarn test:e2e'"
+    "test:e2e": "playwright test"
   },
   "dependencies": {
     "@types/node": "20.4.5",
