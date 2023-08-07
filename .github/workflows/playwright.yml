@@ -17,19 +17,13 @@ jobs:
       run: yarn
     - name: Install Playwright Browsers
       run: yarn playwright install --with-deps
+    - name: Run Playwright component tests
+      run: yarn playwright test -c playwright-ct.config.ts
     - name: Run Playwright e2e tests
       run: xvfb-run yarn playwright test
     - uses: actions/upload-artifact@v3
       if: always()
       with:
-        name: playwright-e2e-report
-        path: playwright-report/e2e
-        retention-days: 30
-    - name: Run Playwright component tests
-      run: yarn playwright test -c playwright-ct.config.ts
-    - uses: actions/upload-artifact@v3
-      if: always()
-      with:
-        name: playwright-component-report
-        path: playwright-report/components
+        name: playwright-report
+        path: playwright-report/
         retention-days: 30
