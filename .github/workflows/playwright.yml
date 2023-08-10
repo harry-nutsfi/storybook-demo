@@ -20,7 +20,7 @@ jobs:
     - name: Run Playwright component tests
       run: yarn playwright test -c playwright-ct.config.ts
     - name: Run Playwright e2e tests
-      run: xvfb-run yarn playwright test
+      run: xvfb-run HEADLESS_MODE=false CI=true yarn playwright test
     - uses: actions/upload-artifact@v3
       if: always()
       with:

@@ -18,9 +18,11 @@ export const test = base.extend<{
       `--load-extension=${metamaskPath}`,
       "--remote-debugging-port=9222",
     ];
-    // if (process.env.CI) {
-    //   browserArgs.push("--disable-gpu");
-    // }
+
+    if (process.env.CI) {
+      browserArgs.push("--disable-gpu");
+    }
+
     if (process.env.HEADLESS_MODE) {
       browserArgs.push("--headless=new");
     }

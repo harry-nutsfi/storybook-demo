@@ -11,6 +11,7 @@
     "build-storybook": "storybook build",
     "chromatic": "npx chromatic",
     "test:e2e": "playwright test",
+    "test:e2e:env": "env-cmd -f .env.e2e playwright test",
     "test:ct": "playwright test -c playwright-ct.config.ts"
   },
   "dependencies": {
@@ -40,6 +41,7 @@
     "@storybook/react": "^7.1.1",
     "@storybook/testing-library": "^0.2.0",
     "@synthetixio/synpress": "^3.7.1",
+    "env-cmd": "^10.1.0",
     "eslint-plugin-storybook": "^0.6.13",
     "storybook": "^7.1.1"
   }
