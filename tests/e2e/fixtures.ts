@@ -35,7 +35,8 @@ export const test = base.extend<{
     await context.pages()[0].waitForTimeout(3000);
     // setup metamask
     await initialSetup(chromium, {
-      secretWordsOrPrivateKey: process.env.E2E_METAMASK_SEED_PHRASE,
+      secretWordsOrPrivateKey:
+        "test test test test test test test test test test test junk",
       network: "goerli",
       password: "e2eTesting",
       enableAdvancedSettings: true,
