@@ -22,7 +22,7 @@ jobs:
     - name: Run Playwright e2e tests
       run: xvfb-run yarn playwright test
       env:
-        E2E_HEADLESS_MODE: false
+        E2E_METAMASK_SEED_PHRASE: ${{ secrets.E2E_METAMASK_SEED_PHRASE }}
     - uses: actions/upload-artifact@v3
       if: always()
       with:
