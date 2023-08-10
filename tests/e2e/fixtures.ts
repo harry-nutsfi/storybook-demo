@@ -23,7 +23,7 @@ export const test = base.extend<{
       browserArgs.push("--disable-gpu");
     }
 
-    if (process.env.HEADLESS_MODE) {
+    if (process.env.E2E_HEADLESS_MODE) {
       browserArgs.push("--headless=new");
     }
     // launch browser
@@ -35,8 +35,7 @@ export const test = base.extend<{
     await context.pages()[0].waitForTimeout(3000);
     // setup metamask
     await initialSetup(chromium, {
-      secretWordsOrPrivateKey:
-        "test test test test test test test test test test test junk",
+      secretWordsOrPrivateKey: process.env.E2E_METAMASK_SEED_PHRASE,
       network: "goerli",
       password: "e2eTesting",
       enableAdvancedSettings: true,
