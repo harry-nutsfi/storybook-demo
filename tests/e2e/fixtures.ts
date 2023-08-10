@@ -19,10 +19,6 @@ export const test = base.extend<{
       "--remote-debugging-port=9222",
     ];
 
-    if (process.env.CI) {
-      browserArgs.push("--disable-gpu");
-    }
-
     if (process.env.E2E_HEADLESS_MODE) {
       browserArgs.push("--headless=new");
     }
