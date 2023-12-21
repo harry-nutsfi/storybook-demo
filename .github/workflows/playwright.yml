@@ -20,7 +20,7 @@ jobs:
     - name: Run Playwright component tests
       run: npx playwright test -c playwright-ct.config.ts
     - name: Run Playwright e2e tests
-      run: xvfb-run E2E_METAMASK_SEED_PHRASE="${{ secrets.E2E_METAMASK_SEED_PHRASE }}" npx playwright test
+      run: E2E_METAMASK_SEED_PHRASE="${{ secrets.E2E_METAMASK_SEED_PHRASE }}" xvfb-run npx playwright test
       env:
         E2E_METAMASK_SEED_PHRASE: ${{ secrets.E2E_METAMASK_SEED_PHRASE }}
     - uses: actions/upload-artifact@v3
