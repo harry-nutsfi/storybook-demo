@@ -16,11 +16,11 @@ jobs:
     - name: Install dependencies
       run: yarn
     - name: Install Playwright Browsers
-      run: yarn playwright install --with-deps
+      run: npx playwright install --with-deps
     - name: Run Playwright component tests
-      run: yarn playwright test -c playwright-ct.config.ts
+      run: npx playwright test -c playwright-ct.config.ts
     - name: Run Playwright e2e tests
-      run: xvfb-run yarn E2E_METAMASK_SEED_PHRASE=${{ secrets.E2E_METAMASK_SEED_PHRASE }} playwright test
+      run: xvfb-run E2E_METAMASK_SEED_PHRASE="${{ secrets.E2E_METAMASK_SEED_PHRASE }}" npx playwright test
       env:
         E2E_METAMASK_SEED_PHRASE: ${{ secrets.E2E_METAMASK_SEED_PHRASE }}
     - uses: actions/upload-artifact@v3
