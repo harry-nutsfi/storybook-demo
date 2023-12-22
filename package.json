@@ -10,8 +10,7 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "chromatic": "npx chromatic",
-    "test:e2e": "playwright test",
-    "test:e2e:env": "env-cmd -f .env.local playwright test",
+    "test:e2e": "env-cmd -f .env.local playwright test",
     "test:ct": "playwright test -c playwright-ct.config.ts"
   },
   "dependencies": {

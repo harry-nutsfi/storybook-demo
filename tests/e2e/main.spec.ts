@@ -11,5 +11,5 @@ test("has main content", async ({ page }) => {
 
 test("has second content", async ({ page }) => {
   const second = page.locator(".last");
-  await expect(second).toHaveText("Duong");
+  await expect(second).toHaveText("Dong");
 });
