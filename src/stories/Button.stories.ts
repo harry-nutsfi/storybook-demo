@@ -1,5 +1,6 @@
-import { Button } from "@/app/components/Button";
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from '@storybook/react';
+import { Button } from "../app/components/Button";
+
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta = {
